@@ -1,0 +1,120 @@
+/* Includes everything into widths and heights */
+*, *::after, *::before { 
+  box-sizing: border-box;
+}
+
+
+/*Use cell-size variable to easily equate all cells*/
+:root {
+  --cell-size: 100px;
+  --mark-size: calc(var(--cell-size) * .9);
+}
+
+h1 {
+    text-align: center;
+    font: bolder;
+    font-size: 80px;
+    margin: 20px;
+    color: white;
+    background-color: #41B3A3;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    /* background-image: linear-gradient(to bottom right, #ff3cac, #562b7c, #2b86c5) */
+    border: solid 5px white;
+    border-radius: 10px;
+}
+
+h3 {
+  color: #E27D60;
+  font-weight: bolder;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.text {
+  display: grid;
+  
+  grid-template-columns: 1fr 1fr 1fr ;
+}
+
+.counters, .finale {
+  margin-left: 50px;
+}
+
+#timer {
+  margin-left: 40px;
+}
+
+.start, .restarter {
+  background-color: #E27D60;
+  border-radius:10px;
+  margin: 10px;
+  font-size: 40px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.finale.invisible, .message.invisible {
+  color: #85dcb8;
+  background-color: #85dcb8;
+  border: 0px;
+}
+
+.restarter.invisible {
+  color: #85dcb8;
+  background-color: #85dcb8;
+  border: 0px;
+
+}
+
+.message {
+  background-color: #C38D9E;
+  font-size: 20px;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+  color: white;
+  margin-right: 20px;
+  text-align: center;
+  border-radius: 10px;
+  border: solid 3px #41B3A3;
+}
+
+
+body {
+  color:brown;
+  background-color: #85dcb8;
+}
+
+.invisible {
+  background-color: coral;
+}
+
+
+.board {
+  width: 100vw;
+  height: 80vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
+  justify-items: center;
+  align-items: center;
+  grid-template-columns: repeat(3, auto)
+}
+
+
+.cell {
+  width: calc(var(--cell-size) * 1.2);
+  height: calc(var(--cell-size) * 1.2);
+  border: 7px solid #E8A87C;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.cell.o::after  {
+  content: '';
+  
+  border-radius: 50%;
+  width: calc(var(--mark-size) * .7);
+  height: calc(var(--mark-size) * .7);
+  background-color: #C38D9E;
+}
+
